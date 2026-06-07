@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kings Nova School | Kathmandu | Inspiring Minds, Shaping Futures</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Modern CSS Reset */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        /* Define modern color palette & fonts */
+        :root {
+            --primary: #003366; /* Deep Academic Blue */
+            --primary-dark: #002244;
+            --accent: #FBC02D;   /* Vibrant Gold/Yellow */
+            --accent-hover: #F9A825;
+            --text-dark: #212121;
+            --text-light: #757575;
+            --white: #FFFFFF;
+            --bg-light: #FDFDFD;
+            --font-heading: 'Playfair Display', serif; /* Authoritative headers */
+            --font-body: 'Lato', sans-serif;         /* Clean modern body text */
+        }
+
+        body { 
+            line-height: 1.8; 
+            color: var(--text-dark); 
+            background-color: #f4f7f6; 
+            font-family: var(--font-body);
+        }
+
+        h1, h2, h3 { 
+            font-family: var(--font-heading); 
+            font-weight: 700;
+            color: var(--primary); 
+            margin-bottom: 15px; 
+        }
+
+        p, ul { margin-bottom: 20px; color: var(--text-light); font-size: 1.1em;}
+        strong { color: var(--text-dark); }
+
+        /* General Container */
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+        }
+
+        /* 1. Top Header & Nav */
+        header { 
+            background-color: var(--white); 
+            padding: 15px 0; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo and Brand Name alignment */
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .brand img {
+            height: 150px; 
+            width: auto;
+        }
+
+        header h1 { margin: 0; font-size: 1.8em; }
+        
+        nav { display: flex; gap: 10px; align-items: center; }
+        nav a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            padding: 8px 15px; 
+            font-weight: 700;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover { background-color: var(--primary); color: var(--white); }
+        nav a.cta { background-color: var(--accent); color: var(--primary-dark); }
+        nav a.cta:hover { background-color: var(--accent-hover); }
+
+        /* 2. Attractive Hero Section with Campus Image */
+        .hero { 
+            background: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 34, 68, 0.95)), 
+                        url('school_campus.jpg') no-repeat center center/cover; 
+            color: var(--white); 
+            padding: 150px 0; 
+            text-align: center; 
+        }
+        
+        .hero h2 { color: var(--white); font-size: 3.5em; margin-bottom: 10px; line-height: 1.2; }
+        .hero p { font-style: italic; font-size: 1.5em; color: var(--accent); max-width: 700px; margin: 0 auto 30px; }
+        
+        /* 3. Button Styles */
+        .btn { 
+            display: inline-block; 
+            background: var(--accent); 
+            color: var(--primary-dark); 
+            padding: 15px 35px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            font-size: 1.1em;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: var(--accent-hover);
+        }
+
+        /* 4. Section Styling */
+        section { padding: 80px 0; background-color: var(--white); border-bottom: 1px solid #eee; }
+        .alt-bg { background-color: #f9fbfd; }
+        
+        /* 5. Grid/Card Layouts */
+        .grid { display: flex; flex-wrap: wrap; gap: 30px; }
+        .card { 
+            flex: 1 1 calc(33.333% - 30px); 
+            background: var(--white); 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { color: var(--primary-dark); font-size: 1.5em; }
+
+        /* 6. Text-Image split sections */
+        .split-section { display: flex; align-items: center; gap: 50px; }
+        .split-text { flex: 1; }
+        .split-image { flex: 1; text-align: center; }
+        .split-image img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* 7. Facilities List */
+        .facilities-list { 
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .facilities-list li {
+            background-color: var(--white);
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* 8. Modern Footer */
+        footer { 
+            background-color: var(--primary-dark); 
+            color: var(--white); 
+            padding: 60px 0; 
+            font-size: 1em;
+        }
+        footer .grid { justify-content: space-between; }
+        footer .footer-col { flex: 1 1 250px; }
+        footer h3, footer h4 { color: var(--white); margin-bottom: 15px; }
+        footer p { color: #b0bec5; font-size: 0.95em;}
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        .footer-bottom { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 30px; color: #90a4ae;}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <a href="#" class="brand">
+                <img src="Kingsnova school.png" alt="Kings Nova School Logo">
+                <h1>Kings Nova School</h1>
+            </a>
+            
+            <nav>
+                <a href="#about">About</a>
+                <a href="#academics">Academics</a>
+                <a href="#facilities">Facilities</a>
+                <a href="#contact">Contact</a>
+                <a href="#admissions" class="cta">Apply Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Inspiring Excellence, Building Future Leaders</h2>
+            <p>A leading educational institution in the heart of New Baneshwor, Kathmandu.</p>
+            <a href="#admissions" class="btn">Start Your Journey</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <section id="about">
+            <div class="container split-section">
+                <div class="split-text">
+                    <h2>Welcome to Kings Nova School</h2>
+                    <p>We are committed to providing quality education that nurtures academic excellence, creativity, leadership, and lifelong learning.</p>
+                    <p>At Kings Nova School, we believe every child possesses unique talents and abilities. Our mission is to create a safe, inclusive, and stimulating learning environment where students can discover their full potential and become responsible global citizens.</p>
+                    
+                    <h3 style="margin-top:30px;">Our Vision</h3>
+                    <p>To be a center of educational excellence that empowers students with knowledge, skills, values, and confidence to succeed in a rapidly changing world.</p>
+                </div>
+                <div class="split-image">
+                    <img src="teacher photo.png" alt="Teacher helping a student at Kings Nova School">
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="alt-bg">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 50px;">Academic Programs</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Pre-School</h3>
+                        <p>A joyful and engaging learning environment that develops early literacy, numeracy, communication, and social skills.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Primary (Gr 1–5)</h3>
+                        <p>Building strong foundations in academics while fostering creativity and confidence.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Lower Secondary (Gr 6–8)</h3>
+                        <p>Developing analytical thinking, collaboration, and practical learning experiences.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Secondary (Gr 9–10)</h3>
+                        <p>Preparing students for academic success, leadership opportunities, and future educational pathways.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facilities">
+            <div class="container">
+                <h2>Modern Learning Environment</h2>
+                <p>Education extends beyond academics. We provide comprehensive facilities and activities to ensure our students grow academically, socially, emotionally, and physically.</p>
+                
+                <ul class="facilities-list">
+                    <li>Smart Classrooms</li>
+                    <li>Computer & Science Laboratories</li>
+                    <li>Library and Reading Center</li>
+                    <li>Sports and Recreation Facilities</li>
+                    <li>Music and Performing Arts Programs</li>
+                    <li>Student Counseling Services</li>
+                    <li>Health, Safety & Transportation</li>
+                    <li>Debate, Public Speaking & Cultural Programs</li>
+                    <li>Science & Innovation Projects</li>
+                    <li>Community Service Initiatives</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="admissions" class="alt-bg" style="text-align: center;">
+            <div class="container">
+                <div style="background: var(--primary); color: white; padding: 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <h2 style="color: white;">Admissions Are Open</h2>
+                    <p style="color: #b0bec5; max-width: 600px; margin-left: auto; margin-right: auto;">We welcome applications from students who are eager to learn, grow, and succeed.</p>
+                    <p style="color: var(--accent); font-weight: bold; font-size: 1.2em;">Process: Submit Form &rarr; Entrance Assessment &rarr; Parent Interaction &rarr; Confirmation</p>
+                    <a href="#contact" class="btn" style="margin-top: 20px;">Contact Administration</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <div class="container grid">
+            <div class="footer-col">
+                <h3>Kings Nova School</h3>
+                <p>Inspiring Minds, Shaping Futures.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>📍 New Baneshwor, Kathmandu, Nepal</p>
+                <p>📞 Phone: +977-9803631093</p>
+                <p>✉️ Email: <a href="mailto:info@kingsnova.edu.np">info@kingsnova.edu.np</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <p>Stay updated via our website and social media channels for the latest announcements.</p>
+                <p>🌐 <a href="http://www.kingsnova.edu.np" target="_blank">www.kingsnova.edu.np</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Kings Nova School. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
